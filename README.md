@@ -65,9 +65,15 @@ Our approach can also model scenarios with multiple groups as well as obstacles.
 
 Top: NF trained without transport cost; bottom: same NF, trained with transport cost.
 
+#### Shape S
+
 ![result](figures/synthetic/S.PNG)
 
+#### Two Moons
+
 ![result](figures/synthetic/moons.PNG)
+
+#### Gaussian Mixture
 
 ![result](figures/synthetic/mixture.PNG)
 
