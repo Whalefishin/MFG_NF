@@ -10,8 +10,13 @@ The official repository for the code and experiments used in the work:
 
 ### Using NF to solve high-dimensional MFG
 
-Crowd Motion: from left to right, 2D, 10D, 50D, 100D.
-![result](figures/2D.gif)
+Crowd Motion: 
+
+| 2D  | 10D |
+| ------------- | ------------- |
+| ![result](figures/2D.gif)  | ![result](figures/10D_moderate.gif)  |
+
+
 
 ### Multi-Group Interactions
 
