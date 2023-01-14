@@ -64,11 +64,11 @@ Our approach can also model scenarios with multiple groups as well as obstacles.
 
 Top: NF trained without transport cost; bottom: same NF, trained with transport cost.
 
-![result](figures/synthetic/S.gif)
+![result](figures/synthetic/S.PNG)
 
-![result](figures/synthetic/moons.gif)
+![result](figures/synthetic/moons.PNG)
 
-![result](figures/synthetic/mixture.gif)
+![result](figures/synthetic/mixture.PNG)
 
 
 
@@ -76,7 +76,9 @@ Top: NF trained without transport cost; bottom: same NF, trained with transport 
 
 Demo for the movable joints on the robot arm:
 
-![result](figures/robot/robot_movement.gif)
+<!-- ![result](figures/robot/robot_movement.gif) -->
+
+<img src="figures/robot/robot_movement.gif" width="250" height="250"/>
 
 Moving the robot arm from a higher initial position to a terminal position that is just above the table.
 
