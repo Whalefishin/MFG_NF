@@ -15,8 +15,10 @@ from torch.nn.utils import clip_grad_norm_
 from torch import optim
 from nde.transforms import coupling
 from nde import distributions
-from mfg_bilevel_models import Obstacle_indicator, Obstacle_robot, Obstacle, Obstacle_cuboid
+# from mfg_bilevel_models import Obstacle_indicator, Obstacle_robot, Obstacle, Obstacle_cuboid
 import pylab
+
+from mfg_models import construct_Q
 
 device = torch.device('cuda')
 
@@ -24,65 +26,6 @@ device = torch.device('cuda')
 # =================================================================================== #
 #                                  MFG Computations                                   #
 # =================================================================================== #
-
-
-
-# def construct_Q(args, device):
-#     if args.dataset_name == 'crowd_motion_gaussian':
-#         mean = torch.zeros(2).cuda(device)
-#         diag = torch.Tensor([1., 0.5]).cuda(device)
-#         cov  = torch.diag_embed(diag)
-#         Q = D.MultivariateNormal(mean, cov)
-#     elif args.dataset_name == 'crowd_motion_gaussian_nonsmooth_obs':
-#         Q = Obstacle_indicator(args).to(device)
-#     elif args.dataset_name in ['crowd_motion_two_bars', 'crowd_motion_two_bars_bilevel',\
-#                                'crowd_motion_two_bars_uniform', 'crowd_motion_two_bars_uniform_bilevel']:
-#         # coordinates for the corners of the bars
-#         points = [(-5, 0.9, 1.15, 1.35), (1.1, 7, 0.65, 0.85)]
-#         # points = [(-2, 0.5, 1.1, 1.3), (0.5, 3, 0.7, 0.9)]
-#         Q = Obstacle_cuboid(points, args.two_bars_sharpness)
-#     elif args.dataset_name in ['crowd_motion_gaussian_two_bars']:
-#         num_gaussians = 2
-#         weight = D.Categorical(torch.ones(num_gaussians,).to(device))
-#         mean = torch.tensor([[-2,1.2], [4,0.8]]).to(device) # N_m x d
-#         cov  = torch.tensor([[1,0], [0,1e-2]]).unsqueeze(0).repeat(num_gaussians,1,1).to(device)
-#         dist = D.MultivariateNormal(mean.to(device), cov)
-#         # mixture = D.MixtureSameFamily(weight, dist)
-#         # Q = distributions.Mixture((dim,), mixture)
-#         Q = D.MixtureSameFamily(weight, dist)
-#     elif args.dataset_name == 'crowd_motion_gaussian_close':
-#         e_2    = torch.zeros(2).to(device)
-#         e_2[1] = 1.
-#         mean = 0.5 * e_2
-#         diag = 0.02 * torch.Tensor([1., 0.5]).cuda(device)
-#         cov  = torch.diag_embed(diag)
-#         Q = D.MultivariateNormal(mean, cov)
-#     elif args.dataset_name == 'crowd_motion_gaussian_NN_obs':
-#         Q = Obstacle(args.gaussian_multi_dim, args).to(device)
-#         pretrain_obs_dir = './results/crowd_motion_gaussian_bilevel/pretrain_obs.t'
-#         Q.load_state_dict(torch.load(pretrain_obs_dir))
-#         print ("Loaded obstacle from: {}".format(pretrain_obs_dir))
-#         # disable training for the obstacle
-#         for p in Q.parameters():
-#             p.requires_grad = False
-#     elif args.dataset_name == 'drones_22_obs':
-#         mean = torch.Tensor([args.obs_mean_x_22, args.obs_mean_y_22]).cuda(device)
-#         diag = torch.Tensor([args.obs_var_x_22, args.obs_var_y_22]).cuda(device)
-#         cov  = torch.diag_embed(diag)
-#         Q = D.MultivariateNormal(mean, cov)
-#     elif args.dataset_name == 'robot_1':
-#         d_in = 10 # removed 2 dummy dimensions from the original 12
-#         h = 512
-#         Q = Obstacle_robot(d_in, h ,args).to(device)
-#         Q.load_state_dict(torch.load(args.obs_dir))
-#         # disable training for the obstacle
-#         for p in Q.parameters():
-#             p.requires_grad = False
-#     else:
-#         Q = None
-    
-#     return Q
-
 
 def compute_F(args, Q, hist, logp0, ld, Q_is_dist=True, W=None, scheme='right_pt', dataset=None, pad_ld=True):
     """Computes the MFG interaction cost

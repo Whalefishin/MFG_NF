@@ -28,7 +28,7 @@ from klampt.model import collide
 from klampt.model.trajectory import RobotTrajectory
 from klampt.io import resource
 
-from mfg_bilevel_models import construct_Q
+from mfg_models import construct_Q
 
 parser = argparse.ArgumentParser()
 
@@ -41,12 +41,8 @@ parser.add_argument('--dataset_name', type=str, default='gaussian_mixture',
                             'power', 'gas', 'hepmass', 'miniboone', 'bsds300',
                             'robot_1'],
                     help='Name of dataset to use.')
-# parser.add_argument('--train_batch_size', type=int, default=64,
-#                     help='Size of batch used for training.')
 parser.add_argument('--val_frac', type=float, default=1.,
                     help='Fraction of validation set to use.')
-# parser.add_argument('--val_batch_size', type=int, default=512,
-#                     help='Size of batch used for validation.')
 
 # optimization
 parser.add_argument('--learning_rate', type=float, default=3e-4,
@@ -178,8 +174,7 @@ np.random.seed(args.seed)
 
 assert torch.cuda.is_available()
 device = torch.device('cuda')
-if args.tensor_type == 'double':
-    torch.set_default_tensor_type(torch.DoubleTensor)
+torch.set_default_tensor_type(torch.cuda.FloatTensor)
 
 
 # =================================================================================== #
@@ -476,7 +471,7 @@ if args.dataset_name == 'gaussian_mixture':
         dist                  = D.MultivariateNormal(mean.to(device), cov)
         mixture               = D.MixtureSameFamily(weight.to(device), dist)
         distribution          = distributions.Mixture((features,), mixture)
-elif args.dataset_name in ['crowd_motion_gaussian', 'crowd_motion_gaussian_nonsmooth_obs']:
+elif args.dataset_name in ['crowd_motion_gaussian']:
     e_2           = torch.zeros(args.gaussian_multi_dim).to(device)
     e_2[1]        = 1.
     mean          = 3*e_2
@@ -498,7 +493,9 @@ elif args.dataset_name == 'robot_1':
         cov  = args.robot_var * torch.eye(features).to(device)
         distribution  = distributions.MultivarNormal((features,), mean=x_0, cov=cov)
 else:
-    distribution = distributions.StandardNormal((features,))
+    mean = torch.zeros(features).to(device)
+    cov  = torch.eye(features).to(device)
+    distribution  = distributions.MultivarNormal((features,), mean=mean, cov=cov)
 
 # create flows
 if args.NF_model == 'single_flow':
@@ -677,10 +674,7 @@ for step in tbar:
     optimizer.zero_grad()
 
     # grab data
-    if args.tensor_type == 'double':
-        batch = next(train_generator).to(device).double()
-    else:
-        batch = next(train_generator).to(device)
+    batch = next(train_generator).to(device)
     # loss  = compute_loss(flow, batch, args, mode='train')
     loss_dict = compute_loss(flow, batch, args, mode='train')
     loss      = loss_dict['loss']
