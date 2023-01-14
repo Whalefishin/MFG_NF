@@ -41,7 +41,8 @@ The official repository for the code and experiments used in the work:
 
 Our approach can also model scenarios with multiple groups as well as obstacles.
 
-![result](figures/drones_22/with_obs.gif)
+<!-- ![result](figures/drones_22/with_obs.gif) -->
+<img src="figures/drones_22/with_obs.gif" width="250" height="250"/>
 
 
 #### 2 Populations, 3D
