@@ -10,12 +10,24 @@ The official repository for the code and experiments used in the work:
 
 ### Using NF to solve high-dimensional MFG
 
-Crowd Motion: 
+#### Gaussian Mixture
 
-| 2D  | 10D |
-| ------------- | ------------- |
-| ![result](figures/2D.gif)  | ![result](figures/10D_moderate.gif)  |
+| 2D  | 10D | 50D | 100D |
+| ------------- | ------------- | ------------- | ------------- |
+| ![result](figures/gaussian_mixture/2D.gif)  | ![result](figures/gaussian_mixture/10D.gif)  | ![result](figures/gaussian_mixture/50D.gif)  | ![result](figures/gaussian_mixture/100D.gif)  |
 
+
+#### Crowd Motion
+
+| 2D  | 10D | 50D | 100D |
+| ------------- | ------------- | ------------- | ------------- |
+| ![result](figures/crowd_motion/2D.gif)  | ![result](figures/crowd_motion/10D_weak.gif)  | ![result](figures/crowd_motion/50D.gif)  | ![result](figures/crowd_motion/100D.gif)  |
+
+10D, with various obstacle avoidance behaviors:
+
+| Weak | Moderate | Strong |
+| ------------- | ------------- | ------------- |
+| ![result](figures/crowd_motion/10D_weak.gif)  | ![result](figures/crowd_motion/10D_moderate.gif)  | ![result](figures/crowd_motion/10D_strong.gif)  |
 
 
 ### Multi-Group Interactions
