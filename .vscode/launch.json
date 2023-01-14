@@ -1,0 +1,389 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            
+
+
+            // "args": ["--exp_name", "paper_AR_OT=5e-5", "--reg_OT_dir", "norm", "--lbd_OT", "5e-5",
+            //     "--dataset_name", "hepmass", "--train_batch_size", "512", "--num_training_steps", "1",
+            //      "--learning_rate", "5e-4", "--num_flow_steps", "10", "--num_transform_blocks", "2",
+            //       "--hidden_features", "256", "--num_bins", "8", "--dropout_probability", "0.2",
+            //        "--base_transform_type", "rq-autoregressive", "--tabular_subset", "true"
+            // ],
+
+            // "args": ["--dataset_name", "gaussian_mixture", "--num_training_steps", "10", "--exp_name", "CL_test",
+            //         "--base_transform_type", "rq-coupling", "--num_flow_steps", "2", "--train_batch_size", "32",
+            //         "--monitor_interval", "8"
+            //     ],
+
+            // "args": ["--exp_name", "testCenter", "--tail_bound", "5",
+            //     "--reg_OT_dir", "gen", "--lbd_OT", "0", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "gaussian_mixture", "--num_training_steps", "1",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "5e-2", "--LU_last", "false",
+            //        "--num_flow_steps", "10", "--NF_loss", "KL_density", "--load_best_val", "false",
+            //        "--disc_scheme", "centered", "--train_batch_size", "2", 
+            // ],
+
+            // "args": ["--exp_name", "NSF_CL_mixture_test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "gaussian_mixture", "--num_training_steps", "10",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "0", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "1", "--NF_model", "single_flow", "--num_flow_steps", "2"
+            // ],
+
+            // "args": ["--exp_name", "NSF_CL_mixture_undersample_test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm", "--mixture_weight", "undersample_one",
+            //     "--dataset_name", "gaussian_mixture", "--num_training_steps", "10",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "0", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "10", "--num_flow_steps", "2", "--num_train_data", "100"
+            // ],
+
+            // "args": ["--exp_name", "NSF_CL_crowd_motion_test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "crowd_motion_gaussian", "--num_training_steps", "1",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "1"
+            // ],
+
+            // "args": ["--exp_name", "NSF_CL_moons_test", 
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "moons", "--num_training_steps", "2",
+            //        "--base_transform_type", "rq-coupling",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", 
+            //        "--LU_last", "false", "--train_batch_size", "32", "--tail_bound", "5",
+            //        "--monitor_interval", "1"
+            // ],
+
+            // "args": ["--exp_name", "NSF_CL_crowd_motion_2D_Jeff_OT_1e-1_F_2e-1_B=2048_lr=1e-3_N=50k_FD4Simp",
+            //  "--disc_scheme", "FD4_simp", "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //   "--LU_last", "false", "--NF_loss", "jeffery", "--lr_schedule", "adaptive", "--dataset_name",
+            //    "crowd_motion_gaussian", "--num_training_steps", "1", "--base_transform_type", "rq-coupling",
+            //     "--gaussian_multi_dim", "2", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+            //     "--lbd_F", "2e-1", "--train_batch_size", "2048", "--learning_rate", "1e-3", "--tail_bound", "5",
+            //      "--num_train_data", "50000", "--load_best_val", "true"
+            // ],
+            
+        //     "args": ["--exp_name", "nonsmooth_obs_test",
+        //     "--disc_scheme", "FD4_simp", "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+        //      "--LU_last", "false", "--NF_loss", "jeffery", "--lr_schedule", "adaptive", "--dataset_name",
+        //       "crowd_motion_gaussian_nonsmooth_obs", "--num_training_steps", "1", "--base_transform_type", "rq-coupling",
+        //        "--gaussian_multi_dim", "2", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+        //        "--lbd_F", "2e-1", "--train_batch_size", "2048", "--learning_rate", "1e-3", "--tail_bound", "5",
+        //         "--num_train_data", "50000", "--monitor_interval", "1"
+        //    ],
+
+        //    "args": ["--exp_name", "test",
+        //    "--disc_scheme", "FD4_simp", "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+        //     "--LU_last", "false", "--NF_loss", "KL_density", "--lr_schedule", "adaptive", "--dataset_name",
+        //      "crowd_motion_two_bars_uniform", "--num_training_steps", "2", "--base_transform_type", "rq-coupling",
+        //       "--gaussian_multi_dim", "2", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+        //       "--lbd_F", "2e-1", "--train_batch_size", "32", "--learning_rate", "1e-3", "--tail_bound", "5",
+        //        "--num_train_data", "50000", "--monitor_interval", "1", "--num_flow_steps", "1", "--hidden_features",
+        //        "2", "--dropout_probability", "0", "--interp_hist", "false", "--n_interp", "5"
+        //   ],
+
+            // "args": ["--exp_name", "test",
+            // "--disc_scheme", "FD4_simp", "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            // "--LU_last", "false", "--NF_loss", "KL_density", "--lr_schedule", "adaptive", "--dataset_name",
+            //     "crowd_motion_gaussian", "--num_training_steps", "2", "--base_transform_type", "rq-coupling",
+            //     "--gaussian_multi_dim", "5", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+            //     "--lbd_F", "2e-1", "--train_batch_size", "32", "--learning_rate", "1e-3", "--tail_bound", "5",
+            //     "--num_train_data", "50000", "--monitor_interval", "1", "--num_flow_steps", "1", "--hidden_features",
+            //     "2", "--dropout_probability", "0", "--interp_hist", "false", "--n_interp", "5"
+            // ],
+
+            // "args": ["--exp_name", "test",
+            // "--disc_scheme", "FD4_simp", "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            // "--LU_last", "false", "--NF_loss", "jeffery", "--lr_schedule", "adaptive", "--dataset_name",
+            // "crowd_motion_gaussian_two_bars_gaussian", "--num_training_steps", "1", "--monitor_interval", "1",
+            // "--base_transform_type", "rq-coupling",
+            // "--gaussian_multi_dim", "2", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+            // "--lbd_F", "2e-1", "--train_batch_size", "32", "--learning_rate", "1e-3", "--tail_bound", "5",
+            // "--num_train_data", "50000", "--num_flow_steps", "1", "--hidden_features",
+            // "2", "--dropout_probability", "0", "--interp_hist", "false", "--n_interp", "5",
+            // "--pretrain_obs_BLO", "true", "--pou_obs", "true"
+            // ],
+            
+            // =================  Robotics ================== //
+            // "args": ["--exp_name", "test",
+            // "--disc_scheme", "FD4_simp", "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--LU_last", "false", "--NF_loss", "KL_sampling", "--lr_schedule", "adaptive", "--dataset_name",
+            //     "robot_1", "--num_training_steps", "2", "--base_transform_type", "rq-coupling",
+            //     "--gaussian_multi_dim", "2", "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1",
+            //     "--lbd_F", "2e-1", "--train_batch_size", "32", "--learning_rate", "1e-3", "--tail_bound", "5",
+            //     "--num_train_data", "50000", "--monitor_interval", "1", "--num_flow_steps", "1", "--hidden_features",
+            //     "2", "--robot_init_pos", "under_table"
+            // ],
+
+            // =================  Two NFs ================== //
+            // "args": ["--exp_name", "NSF_CL_mixture_test", "--dataset_name", "3gaussians",
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //       "--num_training_steps", "10",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "0", "--lbd_F", "0", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "10", "--gaussian_multi_a", "1"
+            // ],
+
+            // "args": ["--exp_name", "test", "--dataset_name", "S_swiss",
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //       "--num_training_steps", "10",
+            //        "--base_transform_type", "rq-coupling",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "0", "--lbd_F", "0", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "10"
+            // ],
+
+            // "args": ["--exp_name", "test", "--dataset_name", "mnist_mnist_e2e",
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //       "--num_training_steps", "10",
+            //        "--base_transform_type", "rq-coupling",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "0", "--lbd_F", "0", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "10"
+            // ],
+
+            // =================  Multi-population MFG ================== //
+            // "args": ["--exp_name", "test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "drones_82", "--num_training_steps", "1",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "1e-1", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "1", "--num_flow_steps", "3", "--num_train_data", "10000",
+            //        "--disc_scheme", "forward", "--radius_82", "2", "--var_drones", "1e-3",
+            //        "--NF_loss", "jeffery"
+            // ],
+
+            // "args": ["--exp_name", "test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "drones_22_obs", "--num_training_steps", "2",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "1e-1", 
+            //        "--LU_last", "false", "--train_batch_size", "3", "--tail_bound", "5",
+            //        "--monitor_interval", "1", "--num_flow_steps", "2", "--num_train_data", "10000",
+            //        "--disc_scheme", "forward", "--var_drones", "1e-3", "--NF_loss", "jeffery",
+            //        "--monitor_interval", "1", "--plot_traj_thres", "2"
+            // ],
+
+            // =================  Bilevel MFG ================== //
+            // "args": ["--exp_name", "test", 
+            //     "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            //     "--dataset_name", "crowd_motion_gaussian_bilevel", "--num_training_steps", "2",
+            //        "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //        "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", 
+            //        "--LU_last", "false", "--train_batch_size", "4", "--tail_bound", "5",
+            //        "--monitor_interval", "1", "--lr_obs", "1e-2", "--num_training_steps_inner", "2",
+            //        "--optimizer_obs", "sgd", "--l_obs", "0", "--act_obs", "softplus", "--h_obs", "2",
+            //        "--train_batch_size_inner", "4", "--optimizer_inner", "sgd",
+            //        "--num_batch_to_plot", "1", "--load_pretrain_NF", "false", 
+            //        "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //        "--dropout_probability", "0", "--debug_obs", "NN", "--debug_obs_init", "rand",
+            //        "--debug_tensor_type", "double", "--step_size_inner", "3e-4", "--num_flow_steps", "10",
+            //        "--gradcheck_interval", "1"
+            // ],
+
+            // "args": ["--exp_name", "test", 
+            // "--reg_OT_dir", "norm", "--linear_transform_type", "lu_no_perm",
+            // "--dataset_name", "crowd_motion_two_bars_bilevel", "--num_training_steps", "3",
+            //    "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //    "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", 
+            //    "--LU_last", "false", "--train_batch_size", "4", "--tail_bound", "5",
+            //    "--monitor_interval", "1", "--lr_obs", "1e-2", "--num_training_steps_inner", "2",
+            //    "--optimizer_obs", "sgd", "--l_obs", "0", "--act_obs", "softplus", "--h_obs", "2",
+            //    "--train_batch_size_inner", "4", "--optimizer_inner", "adam",
+            //    "--num_batch_to_plot", "1", "--load_pretrain_NF", "true", 
+            //    "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //    "--dropout_probability", "0", "--debug_obs", "NN", "--debug_obs_init", "rand",
+            //    "--debug_tensor_type", "double", "--step_size_inner", "1e-5", "--num_flow_steps", "10",
+            //    "--gradcheck_interval", "1", "--num_train_data", "100"
+            // ],
+            
+            // // for gaussian BLO
+            // "args": ["--exp_name", "test", 
+            // "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            // "--dataset_name", "crowd_motion_gaussian_bilevel", "--num_training_steps", "10",
+            //    "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "5",
+            //    "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //    "--LU_last", "false", "--train_batch_size", "512", "--train_batch_size_inner", "128", "--tail_bound", "5",
+            //    "--lr_obs", "1e0", "--num_training_steps_inner", "10",
+            //    "--optimizer_obs", "sgd", "--act_obs", "mish", "--h_obs", "128",
+            //    "--train_batch_size_inner", "128", "--optimizer_inner", "adam",
+            //    "--num_batch_to_plot", "1", "--load_pretrain_NF", "true", 
+            //    "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //    "--act_obs_out", "sigmoid", "--NF_loss", "jeffery",
+            //    "--dropout_probability", "0", "--debug_obs", "NN",
+            //    "--debug_tensor_type", "float", "--step_size_inner", "3e-5", "--num_flow_steps", "10",
+            //    "--gradcheck_interval", "10000", "--num_train_data", "30000",
+            //    "--load_pretrain_obs", "false", "--algo", "GM", "--disc_scheme", "FD4_simp"
+            // ],
+
+            // // for two bars BLO
+            // "args": ["--exp_name", "test", 
+            // "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            // "--dataset_name", "crowd_motion_two_bars_bilevel", "--num_training_steps", "10",
+            //    "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //    "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //    "--LU_last", "false", "--train_batch_size", "512", "--train_batch_size_inner", "128", "--tail_bound", "5",
+            //    "--lr_obs", "1e0", "--num_training_steps_inner", "10",
+            //    "--optimizer_obs", "sgd", "--act_obs", "mish", "--h_obs", "128",
+            //    "--train_batch_size_inner", "128", "--optimizer_inner", "adam",
+            //    "--num_batch_to_plot", "1", "--load_pretrain_NF", "true", 
+            //    "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //    "--act_obs_out", "sigmoid", "--NF_loss", "jeffery",
+            //    "--dropout_probability", "0", "--debug_obs", "NN",
+            //    "--debug_tensor_type", "float", "--step_size_inner", "1e-3", "--num_flow_steps", "10",
+            //    "--gradcheck_interval", "100", "--num_train_data", "30000",
+            //    "--load_pretrain_obs", "false", "--algo", "GM", "--disc_scheme", "FD4_simp",
+            //    "--obs_reg_mass", "false", "--two_bars_height", "50.", "--two_bars_sharpness", "8"
+            // ],
+
+            // // for two bars BLO uniform
+            // "args": ["--exp_name", "test", 
+            // "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            // "--dataset_name", "crowd_motion_two_bars_uniform_bilevel", "--num_training_steps", "10",
+            //    "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //    "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //    "--LU_last", "false", "--train_batch_size", "512", "--train_batch_size_inner", "128", "--tail_bound", "5",
+            //    "--lr_obs", "1e0", "--num_training_steps_inner", "5",
+            //    "--optimizer_obs", "adam", "--act_obs", "mish", "--h_obs", "128",
+            //    "--train_batch_size_inner", "128", "--optimizer_inner", "adam",
+            //    "--num_batch_to_plot", "1", "--load_pretrain_NF", "true", 
+            //    "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //    "--act_obs_out", "sigmoid", "--NF_loss", "KL_density",
+            //    "--dropout_probability", "0", "--debug_obs", "NN",
+            //    "--debug_tensor_type", "float", "--step_size_inner", "1e-3", "--num_flow_steps", "10",
+            //    "--gradcheck_interval", "100", "--num_train_data", "30000",
+            //    "--load_pretrain_obs", "false", "--algo", "GM", "--disc_scheme", "FD4_simp",
+            //    "--obs_reg_mass", "true", "--two_bars_height", "1.", "--two_bars_sharpness", "8",
+            //    "--obs_reg_mass_loss", "l1", "--lbd_mass", "1e-1"
+            // ],
+
+            // // for gaussian two bars BLO uniform
+            // "args": ["--exp_name", "test", 
+            // "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            // "--dataset_name", "crowd_motion_gaussian_two_bars_uniform_bilevel", "--num_training_steps", "10",
+            //    "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //    "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //    "--LU_last", "false", "--train_batch_size", "512", "--train_batch_size_inner", "128", "--tail_bound", "5",
+            //    "--lr_obs", "1e0", "--num_training_steps_inner", "5",
+            //    "--optimizer_obs", "sgd", "--act_obs", "mish", "--h_obs", "128",
+            //    "--train_batch_size_inner", "128", "--optimizer_inner", "sgd",
+            //    "--num_batch_to_plot", "1", "--load_pretrain_NF", "true", 
+            //    "--load_pretrain_obs", "false", "--plot_interval", "1",
+            //    "--act_obs_out", "exp", "--NF_loss", "KL_density",
+            //    "--dropout_probability", "0", "--debug_obs", "NN",
+            //    "--debug_tensor_type", "float", "--step_size_inner", "1e-3", "--num_flow_steps", "10",
+            //    "--gradcheck_interval", "100", "--num_train_data", "30000",
+            //    "--load_pretrain_obs", "true", "--pretrain_obs_eps", "3e-2"
+            // ],
+            
+
+            // comparing gaussian two bars uniform forward vs. BLO
+            // "args": ["--exp_name", "test", 
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //     "--LU_last", "false", "--NF_loss", "KL_density", "--dataset_name", "crowd_motion_gaussian_two_bars_uniform_bilevel",
+            //     "--num_training_steps_inner", "10", "--num_training_steps", "1000", "--base_transform_type", "rq-coupling",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--train_batch_size", "512", "--lr_obs",
+            //     "1e0", "--act_obs_out", "exp", "--tail_bound", "5", "--optimizer_obs", "sgd", "--h_obs", "128",
+            //     "--patience_obs", "100000", "--step_size_inner", "1e-3", "--optimizer_inner", "sgd", "--act_obs", "mish",
+            //     "--gradcheck_interval", "50000", "--debug_tensor_type", "float", "--dropout_probability", "0", 
+            //     "--load_pretrain_NF", "true", "--train_batch_size_inner", "128", "--load_pretrain_obs", "true",
+            //     "--pretrain_obs_eps", "0", "--pretrain_NF_dir",
+            //     "results/crowd_motion_gaussian_two_bars_uniform/F=2e-1_SGD/crowd_motion_gaussian_two_bars_uniform-best-val-F=2e-1_SGD.t",
+            //     "--algo", "GM_true_obs"
+            // ],
+
+            // "args": ["--exp_name", "test", "--disc_scheme", "FD4_simp", 
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //     "--LU_last", "false", "--NF_loss", "KL_density", "--dataset_name", "crowd_motion_gaussian_two_bars_uniform_bilevel",
+            //     "--num_training_steps_inner", "10", "--num_training_steps", "1000", "--base_transform_type", "rq-coupling",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //     "--tail_bound", "5", "--patience_obs", "100000", "--step_size_inner", "1e-3", "--optimizer_inner", "sgd",
+            //     "--gradcheck_interval", "50000", "--debug_tensor_type", "float", "--dropout_probability", "0", 
+            //     "--load_pretrain_NF", "true", "--train_batch_size_inner", "128", 
+            //     "--pretrain_NF_dir",
+            //     "results/crowd_motion_gaussian_two_bars_uniform/F=2e-1_SGD/crowd_motion_gaussian_two_bars_uniform-best-val-F=2e-1_SGD.t",
+            //     "--algo", "GM"
+            // ],
+
+            // "args": ["--optimizer", "sgd", "--disc_scheme", "FD4_simp", "--reg_OT_dir", "gen",
+            //  "--linear_transform_type", "lu_no_perm", "--LU_last", "false", "--NF_loss", "KL_density",
+            //   "--lr_schedule", "adaptive", "--dataset_name", "crowd_motion_gaussian_two_bars_uniform",
+            //    "--num_training_steps", "10", "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--train_batch_size", "128",
+            //      "--learning_rate", "1e-3", "--tail_bound", "5", "--num_train_data", "50000", "--lbd_F_E", "0",
+            //      "--load_best_val", "true", "--best_val_name", "F=2e-1_SGD", "--dropout_probability", "0",
+            //      "--grad_norm_clip_value", "0"
+            // ],
+
+            // "args": ["--optimizer", "adam", "--disc_scheme", "FD4_simp", "--reg_OT_dir", "gen",
+            //  "--linear_transform_type", "lu_no_perm", "--LU_last", "false", "--NF_loss", "jeffery",
+            //   "--lr_schedule", "adaptive", "--dataset_name", "crowd_motion_flower",
+            //    "--num_training_steps", "2", "--base_transform_type", "rq-coupling", "--gaussian_multi_dim", "2",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--train_batch_size", "128",
+            //      "--learning_rate", "1e-3", "--tail_bound", "5", "--num_train_data", "50000", "--lbd_F_E", "0",
+            //     "--dropout_probability", "0", "--monitor_interval", "2",
+            //      "--grad_norm_clip_value", "0"
+            // ],
+
+
+            // // // gaussian two bars gaussian bilevel
+            // "args": ["--exp_name", "test", "--disc_scheme", "FD4_simp", 
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //     "--LU_last", "false", "--NF_loss", "jeffery", "--dataset_name", "crowd_motion_gaussian_two_bars_gaussian_bilevel",
+            //     "--num_training_steps_inner", "10", "--num_training_steps", "1000", "--base_transform_type", "rq-coupling",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //     "--tail_bound", "5", "--patience_obs", "100000", "--step_size_inner", "1e-4", "--optimizer_inner", "adam",
+            //     "--gradcheck_interval", "50000", "--debug_tensor_type", "float", "--dropout_probability", "0", 
+            //     "--load_pretrain_NF", "true", "--train_batch_size_inner", "128", 
+            //     "--grad_clip_LL", "false", "--grad_clip_obs", "false", "--lr_obs", "1e-4",
+            //     "--h_obs", "128", "--bn_obs", "false", "--pou_obs", "false", "--last_bias_obs", "true"
+            // ],
+
+            "args": ["--exp_name", "test", "--disc_scheme", "FD4_simp", 
+                "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+                "--LU_last", "false", "--NF_loss", "jeffery", "--dataset_name", "crowd_motion_gaussian_two_bars_gaussian_bilevel",
+                "--num_training_steps_inner", "20", "--num_training_steps", "1000", "--base_transform_type", "rq-coupling",
+                "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+                "--tail_bound", "5", "--patience_obs", "100000", "--step_size_inner", "1e-5", "--optimizer_inner", "adam",
+                "--gradcheck_interval", "50000", "--debug_tensor_type", "float", "--dropout_probability", "0", 
+                "--load_pretrain_NF", "true", "--train_batch_size_inner", "128", 
+                "--grad_clip_LL", "true", "--grad_clip_obs", "false", "--lr_obs", "1e-4",
+                "--h_obs", "128", "--algo", "penalty_fixNF", "--penalty_H_approx_iter", "5", "--verbose_logging", "true",
+                "--load_pretrain_obs", "false"
+            ],
+
+            // "args": ["--exp_name", "test", "--disc_scheme", "FD4_simp", 
+            //     "--reg_OT_dir", "gen", "--linear_transform_type", "lu_no_perm",
+            //     "--LU_last", "false", "--NF_loss", "jeffery", "--dataset_name", "crowd_motion_gaussian_two_bars_gaussian_bilevel",
+            //     "--num_training_steps_inner", "2", "--num_training_steps", "1000", "--base_transform_type", "rq-coupling",
+            //     "--OT_part", "block_CL_no_perm", "--lbd_OT", "1e-1", "--lbd_F", "2e-1", "--lbd_F_E", "0",
+            //     "--tail_bound", "5", "--patience_obs", "100000", "--step_size_inner", "5e-2", "--optimizer_inner", "sgd",
+            //     "--gradcheck_interval", "1", "--debug_tensor_type", "double", "--dropout_probability", "0", 
+            //     "--load_pretrain_NF", "true", "--train_batch_size_inner", "32", 
+            //     "--grad_clip_LL", "true", "--grad_clip_obs", "false", "--lr_obs", "1e0",
+            //     "--h_obs", "32", "--gradcheck_use_higher_opt", "true"
+            // ],
+
+            "cwd": "${fileDirname}",
+            "env": {"PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT": "2"}
+        }
+    ]
+}
