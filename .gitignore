@@ -126,9 +126,6 @@ venv.bak/
 # matlab
 *.m
 
-# images
-*.png
-
 # conor
 log/*
 out/*
