@@ -78,15 +78,19 @@ Demo for the movable joints on the robot arm:
 
 <!-- ![result](figures/robot/robot_movement.gif) -->
 
-<img src="figures/robot/robot_movement.gif" width="250" height="250"/>
+<img src="figures/robot/robot_movement.gif" width="300" height="300"/>
 
 Moving the robot arm from a higher initial position to a terminal position that is just above the table.
 
-![result](figures/robot/above_table.gif)
+<!-- ![result](figures/robot/above_table.gif) -->
+
+<img src="figures/robot/above_table.gif" width="300" height="300"/>
 
 Moving the robot arm from an initial position that is below the table, to a terminal position that is just above the cup on the table, while avoiding the table itself.
 
-![result](figures/robot/under_table.gif)
+<!-- ![result](figures/robot/under_table.gif) -->
+
+<img src="figures/robot/under_table.gif" width="300" height="300"/>
 
 
 
