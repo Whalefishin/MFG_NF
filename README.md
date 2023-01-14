@@ -32,11 +32,59 @@ The official repository for the code and experiments used in the work:
 
 ### Multi-Group Interactions
 
+#### 2 Populations, 2D
+
+| None | Moderate | Strong |
+| ------------- | ------------- | ------------- |
+| ![result](figures/drones_22/none.gif)  | ![result](figures/drones_22/moderate.gif)  | ![result](figures/drones_22/strong.gif)  |
+
+
+Our approach can also model scenarios with multiple groups as well as obstacles.
+
+![result](figures/drones_22/with_obs.gif)
+
+
+#### 2 Populations, 3D
+
+| None | Moderate | Strong |
+| ------------- | ------------- | ------------- |
+| ![result](figures/drones_23/none.gif)  | ![result](figures/drones_23/moderate.gif)  | ![result](figures/drones_23/strong.gif)  |
+
+
+
+#### 8 Populations, 2D
+
+| None | Moderate | Strong |
+| ------------- | ------------- | ------------- |
+| ![result](figures/drones_82/none.gif)  | ![result](figures/drones_82/moderate.gif)  | ![result](figures/drones_82/strong.gif)  |
+
+
 
 ### Using MFG transport cost to regularize NF
 
+Top: NF trained without transport cost; bottom: same NF, trained with transport cost.
+
+![result](figures/synthetic/S.gif)
+
+![result](figures/synthetic/moons.gif)
+
+![result](figures/synthetic/mixture.gif)
+
+
 
 ### Robot Motion Planning
+
+Demo for the movable joints on the robot arm:
+
+![result](figures/robot/robot_movement.gif)
+
+Moving the robot arm from a higher initial position to a terminal position that is just above the table.
+
+![result](figures/robot/above_table.gif)
+
+Moving the robot arm from an initial position that is below the table, to a terminal position that is just above the cup on the table, while avoiding the table itself.
+
+![result](figures/robot/under_table.gif)
 
 
 
