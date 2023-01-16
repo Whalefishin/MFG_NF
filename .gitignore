@@ -127,17 +127,17 @@ venv.bak/
 *.m
 
 # conor
-log/*
-out/*
-checkpoints/*
-datasets/*
-results/
-experiments/dataset/
-final/
-results_laigpu/
-grapher/
-Klampt-examples/
+src/log/*
+src/out/*
+src/checkpoints/*
+src/datasets/*
+src/results/
+src/experiments/dataset/
+src/final/
+src/results_laigpu/
+src/grapher/
+src/Klampt-examples/
 
 # tests
 *_trial_temp*
-.vscode/
+src/.vscode/
