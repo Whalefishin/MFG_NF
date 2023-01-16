@@ -209,14 +209,3 @@ python mfg.py --exp_name OT=5e-3 --dataset_name miniboone --train_batch_size 128
 
 For the other four tabular sets, please refer to the hyperparameter settings used in the paper and change the args accordingly.
 
-
-
-
-<!-- ### Applying MFG to Robot Motion Planning -->
-
-
-## TODO
-
-- Better file organization
-
-
