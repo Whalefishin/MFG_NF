@@ -19,13 +19,15 @@ The official repository for the code and experiments used in the work:
 
 #### Crowd Motion
 
+Implicitly, there is an obstacle sitting at the origin in the middle.
+
 | 2D  | 10D | 50D | 100D |
 | ------------- | ------------- | ------------- | ------------- |
 | ![result](figures/crowd_motion/2D.gif)  | ![result](figures/crowd_motion/10D_weak.gif)  | ![result](figures/crowd_motion/50D.gif)  | ![result](figures/crowd_motion/100D.gif)  |
 
 10D, with various obstacle avoidance behaviors:
 
-| Weak | Moderate | Strong |
+| Weak Avoidance | Moderate Avoidance | Strong Avoidance |
 | ------------- | ------------- | ------------- |
 | ![result](figures/crowd_motion/10D_weak.gif)  | ![result](figures/crowd_motion/10D_moderate.gif)  | ![result](figures/crowd_motion/10D_strong.gif)  |
 
@@ -34,7 +36,7 @@ The official repository for the code and experiments used in the work:
 
 #### 2 Populations, 2D
 
-| None | Moderate | Strong |
+| No Avoidance | Moderate Avoidance | Strong Avoidance |
 | ------------- | ------------- | ------------- |
 | ![result](figures/drones_22/none.gif)  | ![result](figures/drones_22/moderate.gif)  | ![result](figures/drones_22/strong.gif)  |
 
@@ -47,7 +49,7 @@ Our approach can also model scenarios with multiple groups as well as obstacles.
 
 #### 2 Populations, 3D
 
-| None | Moderate | Strong |
+| No Avoidance | Moderate Avoidance | Strong Avoidance |
 | ------------- | ------------- | ------------- |
 | ![result](figures/drones_23/none.gif)  | ![result](figures/drones_23/moderate.gif)  | ![result](figures/drones_23/strong.gif)  |
 
@@ -55,7 +57,7 @@ Our approach can also model scenarios with multiple groups as well as obstacles.
 
 #### 8 Populations, 2D
 
-| None | Moderate | Strong |
+| No Avoidance | Moderate Avoidance | Strong Avoidance |
 | ------------- | ------------- | ------------- |
 | ![result](figures/drones_82/none.gif)  | ![result](figures/drones_82/moderate.gif)  | ![result](figures/drones_82/strong.gif)  |
 
