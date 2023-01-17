@@ -10,7 +10,9 @@ The official repository for the code and experiments used in the work:
 
 ### Using NF to solve high-dimensional MFG
 
-#### Gaussian Mixture
+#### Dynamical Optimal Transport
+
+We transform a gaussian distribution to a gaussian mixture via the learned geodesics.
 
 | 2D  | 10D | 50D | 100D |
 | ------------- | ------------- | ------------- | ------------- |
@@ -19,7 +21,7 @@ The official repository for the code and experiments used in the work:
 
 #### Crowd Motion
 
-Implicitly, there is an obstacle sitting at the origin in the middle.
+We wish to transport the top distribution to the bottom location while avoiding an obstacle located in the middle.
 
 | 2D  | 10D | 50D | 100D |
 | ------------- | ------------- | ------------- | ------------- |
@@ -33,6 +35,8 @@ Implicitly, there is an obstacle sitting at the origin in the middle.
 
 
 ### Multi-Group Interactions
+
+The idea is to think of each density as a group of drones, which seek to arrive at their desired destination with minimal transport cost while avoiding collisions with other groups/obstacles.
 
 #### 2 Populations, 2D
 
