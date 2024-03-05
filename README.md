@@ -2,7 +2,7 @@
 
 The official repository for the code and experiments used in the work:
 
-> Huang, Han, et al. "Bridging Mean-Field Games and Normalizing Flows with Trajectory Regularization." arXiv preprint arXiv:2206.14990 (2022).
+> Huang, Han, et al. "Bridging mean-field games and normalizing flows with trajectory regularization." Journal of Computational Physics 487 (2023): 112155.
 > [[arXiv]](https://arxiv.org/abs/2206.14990)
 
 
